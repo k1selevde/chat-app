@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Block} from '../../components'
 
+import './Auth.scss'
 
 const Auth  = () => (
     <Block>
