@@ -11,7 +11,19 @@ import { Block, Button } from "../../../components"
 import validateFormField from "../../../utils/helpers/validateFormField";
 
 
-const LoginForm  = () => {
+const LoginForm: React.FC<any>  = (props: any) => {
+    const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isValid,
+        isSubmitting
+    } = props;
+
+
     return (
         <div>
             <Block>
@@ -21,8 +33,10 @@ const LoginForm  = () => {
 
                         <Form className="auth__form">
                             <Form.Item
-                                validateStatus={validateFormField('wer', true, 'wer')}
+                                validateStatus={validateFormField("email", touched, errors)}
+                                help={!touched.email ? "" : errors.email}
                                 hasFeedback
+                                style={{minHeight: '70px'}}
                             >
                                 <Input
                                     id="email"
@@ -31,19 +45,27 @@ const LoginForm  = () => {
                                     placeholder="E-Mail"
                                     prefix={<MailOutlined/>}
                                     suffix={
-                                        <Tooltip title="Extra information">
+                                        <Tooltip title="super useful information">
                                             <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
                                         </Tooltip>
                                     }
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
                             </Form.Item>
-                            <Form.Item>
+                            <Form.Item
+                                validateStatus={validateFormField("password", touched, errors)}
+                                help={!touched.password ? "" : errors.password}
+                                style={{marginTop: '40px'}}
+                            >
                                 <Input.Password
                                     id="password"
                                     size="large"
                                     placeholder="Пароль"
                                     type="password"
                                     prefix={<LockOutlined/>}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
                                 />
                             </Form.Item>
                             <Form.Item

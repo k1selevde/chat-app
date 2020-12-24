@@ -10,10 +10,11 @@ const LoginFormContainer = withFormik({
     enableReinitialize: true,
     validate(values) {
         let errors = {};
-        validateForm({ isAuth: true, values, errors });
+        validateForm({ isAuth: false, values, errors });
         return errors;
     },
-    handleSubmit: () => {console.log( 'F12')}
+    handleSubmit: () => {console.log( 'F12')},
+    displayName: 'LoginForm',
 })(LoginForm);
 
 export default LoginFormContainer;

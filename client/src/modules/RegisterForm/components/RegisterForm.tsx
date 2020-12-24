@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import FormField from "../../../components/FormField";
 import {Button} from "../../../components";
 
-const success = true;
+const success = false;
 
 
 const RegisterForm  = () => {
