@@ -5,8 +5,24 @@
     font-size: 20px;
     text-align: center;
     user-select: none;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     color: $action-color;
+  }
+  &__form {
+    margin-top: 30px;
+  }
+  &__success-block {
+    margin-top: 36px;
+    p {
+      line-height: 34px;
+    }
+  }
+  &__descr {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    user-select: none;
+    line-height: 20px;
   }
   &__top {
     padding: 40px 70px ;

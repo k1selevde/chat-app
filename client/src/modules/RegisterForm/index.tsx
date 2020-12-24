@@ -1,10 +1,3 @@
-import * as React from 'react'
-
-
-const RegisterForm  = () => {
-    return (
-        <div>It's Register form</div>
-    );
-}
+import RegisterForm from "./containers/RegisterForm";
 
 export default RegisterForm;

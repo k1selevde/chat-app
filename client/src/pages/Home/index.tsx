@@ -1,9 +1,13 @@
 import * as React from 'react'
 
 
-const Home  = () => {
+const Home: React.FC<any>  = (props) => {
     return (
-        <div>home</div>
+        <section className="home">
+            <div className="chat">
+
+            </div>
+        </section>
     );
 }
 

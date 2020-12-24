@@ -19,7 +19,7 @@ const LoginForm  = () => {
                     <div className="auth__top">
                         <h3 className="auth__title">SIGN IN</h3>
 
-                        <Form className="login-form">
+                        <Form className="auth__form">
                             <Form.Item
                                 validateStatus={validateFormField('wer', true, 'wer')}
                                 hasFeedback
