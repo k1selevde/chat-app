@@ -1,6 +1,19 @@
+
+
 .block {
-  padding: 40px;
+  &__parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+  }
   background: #ffffff;
   border-radius: 15px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.04204);
+  box-shadow: 0px 0px 25px rgba(0, 0, 10, .1);
 }

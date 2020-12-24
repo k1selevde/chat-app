@@ -10,8 +10,10 @@ type BlockProps = {
 
 const Block: React.FC<any>  = ({children, className }) => {
     return (
-        <div  className={cn("block", className )}>
-            {children}
+        <div className="block__parent">
+            <div className={cn("block", className)}>
+                {children}
+            </div>
         </div>
     );
 }

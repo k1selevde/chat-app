@@ -11,7 +11,9 @@ type ButtonProps = {
 
 const Button: React.FC<any>  = (props) => {
     return (
-        <BaseButton />
+        <BaseButton
+            {...props}
+        />
     );
 }
 
