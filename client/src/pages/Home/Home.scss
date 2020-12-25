@@ -1,0 +1,40 @@
+.home {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.chat {
+  min-height: 92%;
+  min-width: 68%;
+  background: white;
+  border-radius: 11px;
+  display: flex;
+  //flex-grow: ;
+  box-shadow: 0px 0px 25px rgba(0, 0, 11, .1);
+  &__sidebar {
+    flex-basis: 30%;
+    background: #254A81;
+    border-right: 2px solid #D9AFD9;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  &__dialog {
+    &--wrap {
+      flex-grow: 1;
+      background: lightgray;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    width: 100%;
+    height:100%;
+  }
+}

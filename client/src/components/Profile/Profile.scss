@@ -1,0 +1,20 @@
+.profile {
+  padding: 15px 15px 15px 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  &__avatar {
+      background: olivedrab;
+      width: 40px;
+      height: 40px;
+      overflow: hidden;
+      border-radius: 20px;
+  }
+  &__fullname {
+    overflow: hidden;
+    margin-left: 18px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+}

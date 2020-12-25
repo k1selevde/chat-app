@@ -38,7 +38,7 @@ const FormField: React.FC<FormFieldProps> = ({
     return (
         <Form.Item
             //@ts-ignore
-            validateStatus={validateFormField(name, touched, errors)}
+            validateStatus={validateFormField(name, touched,values, errors)}
             //@ts-ignore
             help={!touched[name] ? "" : errors[name]}
             hasFeedback

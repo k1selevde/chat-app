@@ -4,9 +4,7 @@ import { Status } from '../components'
 
 const StatusContainer  = () => {
     return (
-        <div>Status container
-            <Status />
-        </div>
+        <Status />
     );
 }
 

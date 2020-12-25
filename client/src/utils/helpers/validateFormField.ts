@@ -6,7 +6,7 @@ type validateFFProps = {
     errors: any
 }
 
-export default (key: any, touched: any, errors : any): validateFormFieldType => {
+export default (key: any, touched: any, values: any, errors : any): validateFormFieldType => {
    if (touched[key]) {
        if (errors[key]) {
            return "error"

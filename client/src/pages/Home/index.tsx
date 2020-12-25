@@ -1,7 +1,10 @@
 import * as React from 'react'
-import Sidebar from "../../components/Sidebar";
 
-import { Status,Messages } from '../../containers'
+
+import {Status, Messages, ChatInput, Sidebar} from '../../containers'
+
+import './Home.scss';
+
 
 const user = true
 const Home: React.FC<any>  = (props) => {
@@ -11,12 +14,15 @@ const Home: React.FC<any>  = (props) => {
                 <div className="chat__sidebar">
                     <Sidebar/>
                 </div>
-                {user && (
-                    <div className="chat__dialog">
-                        <Status />
-                        <Messages />
-                    </div>
-                )}
+                <div className="chat__dialog--wrap">
+                    {user && (
+                        <div className="chat__dialog">
+                            <Status/>
+                            <Messages/>
+                            <ChatInput/>
+                        </div>
+                    )}
+                </div>
             </div>
         </section>
     );

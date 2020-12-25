@@ -1,6 +1,12 @@
 import * as React from 'react'
 
 
+import { Search, Dialogs } from '../../containers'
+
+import Profile from '../Profile'
+
+
+
 import './Sidebar.scss';
 
 
@@ -10,7 +16,10 @@ const Sidebar: React.FC  = () => {
         <div className="sidebar">
             <div className="sidebar-header">
                 <div>
-                    <h4>Мои диалоги</h4>
+                    <Profile />
+                    <Search />
+
+                    <Dialogs />
                 </div>
 
             </div>

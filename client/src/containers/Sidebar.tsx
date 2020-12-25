@@ -1,8 +1,14 @@
 import * as React from 'react'
 
+
+import { Sidebar } from '../components'
+
+
 const SidebarContainer  = () => {
     return (
-        <div>Sidebar container</div>
+        <React.Fragment>
+            <Sidebar />
+        </React.Fragment>
     );
 }
 

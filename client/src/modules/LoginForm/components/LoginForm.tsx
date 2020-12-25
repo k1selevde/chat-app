@@ -34,7 +34,7 @@ const LoginForm: React.FC<any>  = (props: any) => {
 
                         <Form className="auth__form">
                             <Form.Item
-                                validateStatus={validateFormField("email", touched, errors)}
+                                validateStatus={validateFormField("email", touched,values,  errors)}
                                 help={!touched.email ? "" : errors.email}
                                 hasFeedback
                                 style={{minHeight: '70px'}}
@@ -56,7 +56,7 @@ const LoginForm: React.FC<any>  = (props: any) => {
                                 />
                             </Form.Item>
                             <Form.Item
-                                validateStatus={validateFormField("passwordLogin", touched, errors)}
+                                validateStatus={validateFormField("passwordLogin", touched,values, errors)}
                                 help={!touched.passwordLogin ? "" : errors.passwordLogin}
                                 style={{minHeight: '70px'}}
                             >
