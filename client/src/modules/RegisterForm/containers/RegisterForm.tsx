@@ -13,11 +13,15 @@ const RegisterFormContainer  = withFormik({
 
     validate(values) {
         let errors = {};
-        validateForm({ isAuth: true, values, errors });
+        validateForm({ isAuth: false, values, errors });
         return errors;
     },
-
-    handleSubmit: () => {console.log( 'F12')}
+    handleSubmit: (values, { setSubmitting }) => {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+        }, 1000);
+    },
 
 })(RegisterForm);
 

@@ -20,7 +20,8 @@ const LoginForm: React.FC<any>  = (props: any) => {
         handleBlur,
         handleSubmit,
         isValid,
-        isSubmitting
+        isSubmitting,
+        dirty
     } = props;
 
 
@@ -43,6 +44,7 @@ const LoginForm: React.FC<any>  = (props: any) => {
                                     size="large"
                                     style={{width: '320px'}}
                                     placeholder="E-Mail"
+                                    type="email"
                                     prefix={<MailOutlined/>}
                                     suffix={
                                         <Tooltip title="super useful information">
@@ -54,12 +56,12 @@ const LoginForm: React.FC<any>  = (props: any) => {
                                 />
                             </Form.Item>
                             <Form.Item
-                                validateStatus={validateFormField("password", touched, errors)}
-                                help={!touched.password ? "" : errors.password}
-                                style={{marginTop: '40px'}}
+                                validateStatus={validateFormField("passwordLogin", touched, errors)}
+                                help={!touched.passwordLogin ? "" : errors.passwordLogin}
+                                style={{minHeight: '70px'}}
                             >
                                 <Input.Password
-                                    id="password"
+                                    id="passwordLogin"
                                     size="large"
                                     placeholder="Пароль"
                                     type="password"
@@ -72,8 +74,10 @@ const LoginForm: React.FC<any>  = (props: any) => {
                                 style={{textAlign: 'center'}}
                             >
                                 <Button
+                                    disabled={!(values.passwordLogin && values.email) || !isValid || isSubmitting}
                                     size="large"
                                     type="primary"
+                                    onClick={handleSubmit}
                                 > Sign in
                                 </Button>
                             </Form.Item>

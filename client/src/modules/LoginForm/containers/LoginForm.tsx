@@ -13,8 +13,13 @@ const LoginFormContainer = withFormik({
         validateForm({ isAuth: false, values, errors });
         return errors;
     },
-    handleSubmit: () => {console.log( 'F12')},
-    displayName: 'LoginForm',
+    handleSubmit: (values, { setSubmitting }) => {
+        setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+        }, 1000);
+    },
+    displayName: 'LoginForm'
 })(LoginForm);
 
 export default LoginFormContainer;

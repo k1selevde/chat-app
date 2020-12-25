@@ -19,9 +19,28 @@ export default ({isAuth, values, errors}: any) => {
             }
         },
 
+        passwordLogin: (value: any) => {
+            if (!value) {
+                errors.passwordLogin = "Введите пароль";
+            }
+        },
+
         password_2: (value: any) => {
-            if(!isAuth && values.password != value) {
-                errors.password = "Пароли не совпадают."
+            // if (!isAuth && !value) {
+            //    if (Boolean(errors.password)) {
+            //         errors.password_2 = "Что-то не так"
+            //     } else if ( values.password != value) {
+            //         errors.password_2 = "Пароли не совпадают."
+            //     }
+            // }
+            if (!isAuth) {
+                if (!value.trim()) {
+                    errors.password_2 = "Введите пароль еще раз"
+                } else if (Boolean(errors.password)) {
+                    errors.password_2 = "Пароль неверен"
+                } else if (values.password != values.password_2) {
+                    errors.password_2 = "Пароли не совпадают"
+                }
             }
         },
 

@@ -14,6 +14,6 @@ export default (key: any, touched: any, errors : any): validateFormFieldType => 
            return "success"
        }
    } else {
-       return "success";
+       return "";
    }
 }
