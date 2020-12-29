@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom"
 
 import {Auth, Home} from './pages'
+import ForgotPassword from "./components/ForgotPassword";
 
 
 let isAuth = true
@@ -17,6 +18,12 @@ function App() {
             />
 
             <Route
+                path="/forgot-password"
+                component={ForgotPassword}
+            />
+
+            <Route
+                exact
                 path="/"
                 render={() => (isAuth ? <Home /> : <Redirect to="signin" />)}
             />

@@ -20,7 +20,6 @@ const Home: React.FC<any>  = (props) => {
                             <div className="chat__dialog--messages"><Messages/></div>
                             <div className="chat__dialog--chatInput"><ChatInput/></div>
                         </div>
-                    )
                 </div>
             </div>
         </section>

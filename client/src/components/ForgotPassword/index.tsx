@@ -6,36 +6,46 @@ import { Form, Input, Tooltip} from 'antd';
 import { LockOutlined, MailOutlined, InfoCircleOutlined  } from '@ant-design/icons'
 
 
-import { Block, Button } from "../../../components"
+import { Block, Button } from "../"
 
-import validateFormField from "../../../utils/helpers/validateFormField";
+import validateFormField from "../../utils/helpers/validateFormField";
 
 
-const LoginForm: React.FC<any>  = (props: any) => {
+
+interface ForgotPasswordProps {
+
+}
+
+
+const ForgotPassword: React.FC<ForgotPasswordProps>  = (props: any) => {
     const {
-        values,
-        touched,
-        errors,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isValid,
-        isSubmitting,
-        dirty
+        // values,
+        // touched,
+        // errors,
+        // handleChange,
+        // handleBlur,
+        // handleSubmit,
+        // isValid,
+        // isSubmitting,
+        // dirty
     } = props;
 
+
+    const handleChange = (e: any) => {
+
+    }
 
     return (
         <div>
             <Block>
                 <div className="auth">
                     <div className="auth__top">
-                        <h3 className="auth__title">SIGN IN</h3>
+                        <h3 className="auth__title">RESTORE PASSWORD</h3>
 
                         <Form className="auth__form">
                             <Form.Item
-                                validateStatus={validateFormField("email", touched,values,  errors)}
-                                help={!touched.email ? "" : errors.email}
+                                // validateStatus={validateFormField("email", touched,values,  errors)}
+                                // help={!touched.email ? "" : errors.email}
                                 hasFeedback
                                 style={{minHeight: '70px'}}
                             >
@@ -52,42 +62,20 @@ const LoginForm: React.FC<any>  = (props: any) => {
                                         </Tooltip>
                                     }
                                     onChange={handleChange}
-                                    onBlur={handleBlur}
-                                />
-                            </Form.Item>
-                            <Form.Item
-                                validateStatus={validateFormField("passwordLogin", touched,values, errors)}
-                                help={!touched.passwordLogin ? "" : errors.passwordLogin}
-                                style={{minHeight: '70px'}}
-                            >
-                                <Input.Password
-                                    id="passwordLogin"
-                                    size="large"
-                                    placeholder="Пароль"
-                                    type="password"
-                                    prefix={<LockOutlined/>}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
                                 />
                             </Form.Item>
                             <Form.Item
                                 style={{textAlign: 'center'}}
                             >
                                 <Button
-                                    disabled={!(values.passwordLogin && values.email) || !isValid || isSubmitting}
+                                    // disabled={!(values.passwordLogin && values.email) || !isValid || isSubmitting}
                                     size="large"
                                     type="primary"
-                                    onClick={handleSubmit}
-                                > Sign in
+                                    // onClick={handleSubmit}
+                                > Reset
                                 </Button>
                             </Form.Item>
                         </Form>
-                        <Link
-                            className="auth__register-link"
-                            to="/forgot-password"
-                        >
-                            Do you forgot a password ?
-                        </Link>
                     </div>
 
                     <div className="auth__bottom">
@@ -105,4 +93,4 @@ const LoginForm: React.FC<any>  = (props: any) => {
     );
 }
 
-export default LoginForm;
+export default ForgotPassword;

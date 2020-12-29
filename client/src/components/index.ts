@@ -8,6 +8,7 @@ export { default as Time } from "./Time";
 export { default as Search } from "./Search";
 export { default as Sidebar } from "./Sidebar";
 export { default as Dialogs } from "./Dialogs";
+export { default as ForgotPassword } from "./ForgotPassword";
 
 
 
