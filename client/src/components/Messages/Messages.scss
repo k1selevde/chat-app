@@ -1,3 +1,14 @@
 .messages {
-  overflow: auto;
+  &__wrap {
+    height: 100%;
+    padding: 20px;
+    padding-bottom: 0;
+    overflow: auto;
+    background: red;
+  }
+  &--loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

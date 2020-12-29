@@ -1,8 +1,10 @@
 import * as React from 'react'
+import {Messages} from '../components'
 
-const MessagesContainer  = () => {
+
+const MessagesContainer: React.FC  = () => {
     return (
-        <div>Messages container</div>
+        <Messages/>
     );
 }
 

@@ -15,13 +15,12 @@ const Home: React.FC<any>  = (props) => {
                     <Sidebar/>
                 </div>
                 <div className="chat__dialog--wrap">
-                    {user && (
                         <div className="chat__dialog">
-                            <Status/>
-                            <Messages/>
-                            <ChatInput/>
+                            <div className="chat__dialog--status"><Status/></div>
+                            <div className="chat__dialog--messages"><Messages/></div>
+                            <div className="chat__dialog--chatInput"><ChatInput/></div>
                         </div>
-                    )}
+                    )
                 </div>
             </div>
         </section>

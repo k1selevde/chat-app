@@ -28,6 +28,21 @@
   }
 
   &__dialog {
+    display: flex;
+    flex-direction: column;
+    &--chatInput {
+      flex-basis: 18%;
+      background: #97D9E1;
+    }
+    &--messages {
+      flex-basis: 72%;
+      //max-height: 200px;
+      overflow: auto;
+      flex-grow: 1;
+    }
+    &--status {
+      flex-basis: 10%;
+    }
     &--wrap {
       flex-grow: 1;
       background: lightgray;

@@ -2,6 +2,8 @@ import React from 'react';
 import {Route, Redirect, Switch} from "react-router-dom"
 
 import {Auth, Home} from './pages'
+
+
 let isAuth = true
 
 function App() {
