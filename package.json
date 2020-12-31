@@ -5,8 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "client": "npm run build --prefix client",
-    "server": "node index.ts ",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node index.ts",
     "watch": "nodemon index.ts"
   },
   "repository": {
