@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "nodemon index.ts",
+    "build": "nodemon index.ts",
     "eslint": "eslint --ext .ts,.js --fix --quiet .",
     "watch": "nodemon ts-node src/index.ts"
   },
