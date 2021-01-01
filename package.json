@@ -2,11 +2,11 @@
   "name": "react-chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "client": "npm run build --prefix client",
-    "start": "node index.ts",
-    "watch": "nodemon index.ts"
+    "start": "ts-node src/index.ts",
+    "watch": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/k1selevde/react-chat-app#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "concurrently": "^5.3.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
