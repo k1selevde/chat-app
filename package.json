@@ -6,7 +6,7 @@
   "scripts": {
     "client": "npm run build --prefix client",
     "start": "ts-node src/index.ts",
-    "watch": "nodemon src/index.ts"
+    "watch": "nodemon -x ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
