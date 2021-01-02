@@ -1,16 +1,17 @@
-import express from "express";
-import cors from "cors"
-import path from "path"
+import express from 'express';
+import path from 'path'
+
+const app = express()
+
+const port : string|number= process.env.PORT || 5000;
+
+app
+    .use('/', express.static(path.resolve(__dirname,  '../client', 'build')))
 
 
+app.use("*",(req: express.Request, res: express.Response) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
+})
 
-const PORT : string|number = process.env.PORT || 5000;
-
-const app = express();
-
-
-app.use("*",(req, res) =>{
-    res.send("<h1>Welcome to your simple server! Awesome right</h1>");
-});
-
-app.listen(PORT,() => console.log(`hosting @${PORT}`));
+//create a server object:
+app.listen(port,() => console.log(`hosting @${port}`));
