@@ -1,18 +1,31 @@
 import express, { Application, Response, Request, NextFunction} from 'express';
 import path from 'path'
+import bodyParser from "body-parser";
+
+import { userRouter, filesRouter, dialogsRouter, messagesRouter } from './core/routes'
+
+
+
 
 const app: Application = express()
 
 const port : string|number= process.env.PORT || 5000;
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.resolve(__dirname,  '../client', 'build')))
+app.use(bodyParser.json());
+app.use(express.static(path.resolve(__dirname,  '../client', 'build')))
 
-    app.get("*",(req: Request, res: Response) => {
-        res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
-    })
-}
+app.use('/api/user', userRouter)
+app.use('/api/dialogs', dialogsRouter)
+app.use('/api/messages', messagesRouter)
+app.use('/api/files', filesRouter)
+
+// app.use("/api", createRoutes(app));
+
+app.get("*",(req: Request, res: Response) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
+})
+
 
 
 
