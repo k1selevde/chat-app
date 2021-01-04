@@ -1,6 +1,18 @@
 import mongoose, { Schema } from "mongoose";
 import validator from "validator";
 
+
+export interface IUser extends Document {
+    email: string;
+    fullname: string;
+    password: string;
+    confirmed: boolean;
+    avatar: string;
+    confirm_hash: string;
+    last_seen: Date;
+    data?: IUser;
+}
+
 const UserSchema = new Schema(
     {
         email: {
