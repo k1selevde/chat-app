@@ -1,17 +1,13 @@
 import { Router, Request, Response } from 'express'
+import { DialogController } from "../../controllers";
+
 const router = Router()
 
 
-router.get('/', (req: Request, res: Response) => {
-    return res.send('dialogs my')
-})
+router.get('/', DialogController.index)
 
-router.delete('/:id', (req: Request, res: Response) => {
-    return res.send(`dialogs my ${req.params.id}`)
-})
+router.delete('/:id', DialogController.delete)
 
-router.post('/', (req: Request, res: Response) => {
-    return res.send('post  my dialogs')
-})
+router.post('/', DialogController.create)
 
 export default router;
