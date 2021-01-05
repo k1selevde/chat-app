@@ -1,6 +1,10 @@
 import { Router, Request, Response } from 'express'
 const router = Router()
 
+import UserController from "../../controllers/UserController";
+
+
+
 router.get('/me', (req: Request, res: Response) => {
     return res.send('Tanki')
 })
@@ -21,10 +25,9 @@ router.get("/find", (req: Request, res: Response) => {
     return res.send('find users')
 });
 
-router.get("/:id", (req: Request, res: Response) => {
-    console.log(req.params)
-    return res.send(`get user by id, ${req.params.id}`)
-});
+
+
+router.get("/:id", UserController.show);
 
 router.delete("/:id", (req: Request, res: Response) => {
     return res.send('delete user by id')

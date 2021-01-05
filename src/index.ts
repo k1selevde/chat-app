@@ -7,7 +7,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import User from './models/User'
-import { userRouter, filesRouter, dialogsRouter, messagesRouter } from './core/routes'
+//import { userRouter, filesRouter, dialogsRouter, messagesRouter } from './core/routes'
+import createRoutes from "./core/routes";
 
 
 
@@ -35,19 +36,9 @@ try {
 // });
 // user.save().then((docUser) => console.log(`User created ${docUser}`))
 
-app.use(bodyParser.json());
-app.use(express.static(path.resolve(__dirname,  '../client', 'build')))
-
-app.use('/api/user', userRouter)
-app.use('/api/dialogs', dialogsRouter)
-app.use('/api/messages', messagesRouter)
-app.use('/api/files', filesRouter)
-
+createRoutes(app)
 // app.use("/api", createRoutes(app));
 
-app.get("*",(req: Request, res: Response) => {
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
-})
 
 
 
